@@ -45,11 +45,6 @@ public class UserController {
         users.add(userDTO3);
     }
 
-    @GetMapping("/")
-    public String getMessage() {
-        return "Spring application works";
-    }
-
     @GetMapping("/user")
     public List<UserDTO> getUsers() {
         return users;
