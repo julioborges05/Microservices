@@ -11,18 +11,6 @@ public class UserDTO {
     private String telephone;
     private Date registrationDate;
 
-    public UserDTO() {
-    }
-
-    public UserDTO(String name, String cpf, String address, String email, String telephone, Date registrationDate) {
-        this.name = name;
-        this.cpf = cpf;
-        this.address = address;
-        this.email = email;
-        this.telephone = telephone;
-        this.registrationDate = registrationDate;
-    }
-
     public String getName() {
         return name;
     }
