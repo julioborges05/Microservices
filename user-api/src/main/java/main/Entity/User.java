@@ -1,11 +1,19 @@
-package main.DTO;
+package main.Entity;
 
-import main.Entity.User;
+import main.DTO.UserDTO;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
-public class UserDTO {
+@Entity
+public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
     private String cpf;
     private String address;
@@ -13,18 +21,23 @@ public class UserDTO {
     private String telephone;
     private Date registrationDate;
 
-    public UserDTO() {
+    public static User convert(UserDTO userDTO) {
+        User user = new User();
+        user.setName(userDTO.getName());
+        user.setCpf(userDTO.getCpf());
+        user.setAddress(userDTO.getAddress());
+        user.setEmail(userDTO.getEmail());
+        user.setTelephone(userDTO.getTelephone());
+        user.setRegistrationDate(userDTO.getRegistrationDate());
+        return user;
     }
 
-    public static UserDTO convert(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setName(user.getName());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setAddress(user.getAddress());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setTelephone(user.getTelephone());
-        userDTO.setRegistrationDate(user.getRegistrationDate());
-        return userDTO;
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
