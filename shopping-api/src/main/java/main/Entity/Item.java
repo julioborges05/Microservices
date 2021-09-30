@@ -1,6 +1,6 @@
 package main.Entity;
 
-import main.DTO.ItemDTO;
+import main.DTO.Shopping.ItemDTO;
 
 import javax.persistence.Embeddable;
 

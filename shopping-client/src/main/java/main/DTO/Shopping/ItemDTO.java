@@ -1,6 +1,4 @@
-package main.DTO;
-
-import main.Entity.Item;
+package main.DTO.Shopping;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -25,13 +23,5 @@ public class ItemDTO {
 
     public void setPrice(Float price) {
         this.price = price;
-    }
-
-    public static ItemDTO convert(Item item) {
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setProductIdentifier(
-                item.getProductIdentifier());
-        itemDTO.setPrice(item.getPrice());
-        return itemDTO;
     }
 }

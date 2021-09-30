@@ -1,6 +1,6 @@
 package main.Entity;
 
-import main.DTO.UserDTO;
+import main.DTO.User.UserDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
