@@ -1,6 +1,4 @@
-package main.DTO;
-
-import main.Entity.Product;
+package main.DTO.Product;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,18 +15,6 @@ public class ProductDTO {
     private Float price;
     @NotNull
     private CategoryDTO categoryDTO;
-
-    public static ProductDTO convert(Product product) {
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setProductIdentifier(product.getProductIdentifier());
-        productDTO.setName(product.getName());
-        productDTO.setDescription(product.getDescription());
-        productDTO.setPrice(product.getPrice());
-        if(product.getCategory() != null) {
-            productDTO.setCategoryDTO(CategoryDTO.convert(product.getCategory()));
-        }
-        return productDTO;
-    }
 
     public String getProductIdentifier() {
         return productIdentifier;

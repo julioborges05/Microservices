@@ -1,6 +1,5 @@
 package main.Controller;
 
-import main.DTO.UserDTO;
 import main.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

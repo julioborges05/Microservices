@@ -1,7 +1,8 @@
 package main.Service;
 
-import main.DTO.ItemDTO;
-import main.DTO.ShopDTO;
+import main.DTO.DTOConverter;
+import main.DTO.Shopping.ItemDTO;
+import main.DTO.Shopping.ShopDTO;
 import main.Entity.Shop;
 import main.Repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class ShopService {
         List<Shop> shops = shopRepository.findAll();
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -30,7 +31,7 @@ public class ShopService {
         List<Shop> shops = shopRepository.findAllByUserIdentifier(userIdentifier);
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -38,13 +39,13 @@ public class ShopService {
         List<Shop> shops = shopRepository.findAllByDateGreaterThan(shopDTO.getDate());
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public ShopDTO findById(long ProductId) {
         Optional<Shop> shop = shopRepository.findById(ProductId);
-        return shop.map(ShopDTO::convert).orElse(null);
+        return shop.map(DTOConverter::convert).orElse(null);
     }
 
     public ShopDTO save(ShopDTO shopDTO) {
@@ -57,6 +58,6 @@ public class ShopService {
         shop.setDate(new Date());
         shop = shopRepository.save(shop);
 
-        return ShopDTO.convert(shop);
+        return DTOConverter.convert(shop);
     }
 }
