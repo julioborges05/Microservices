@@ -1,6 +1,4 @@
-package main.DTO;
-
-import main.Entity.User;
+package main.DTO.User;
 
 import java.util.Date;
 
@@ -14,17 +12,6 @@ public class UserDTO {
     private Date registrationDate;
 
     public UserDTO() {
-    }
-
-    public static UserDTO convert(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setName(user.getName());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setAddress(user.getAddress());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setTelephone(user.getTelephone());
-        userDTO.setRegistrationDate(user.getRegistrationDate());
-        return userDTO;
     }
 
     public String getName() {

@@ -1,6 +1,4 @@
-package main.DTO;
-
-import main.Entity.Category;
+package main.DTO.Product;
 
 import javax.validation.constraints.NotNull;
 
@@ -9,13 +7,6 @@ public class CategoryDTO {
     @NotNull
     private Long id;
     private String name;
-
-    public static CategoryDTO convert(Category category) {
-        CategoryDTO categoryDTO = new CategoryDTO();
-        categoryDTO.setId(category.getId());
-        categoryDTO.setName(category.getName());
-        return categoryDTO;
-    }
 
     public Long getId() {
         return id;

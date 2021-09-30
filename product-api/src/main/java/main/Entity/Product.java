@@ -1,6 +1,6 @@
 package main.Entity;
 
-import main.DTO.ProductDTO;
+import main.DTO.Product.ProductDTO;
 
 import javax.persistence.*;
 

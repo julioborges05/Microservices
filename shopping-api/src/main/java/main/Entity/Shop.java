@@ -1,6 +1,6 @@
 package main.Entity;
 
-import main.DTO.ShopDTO;
+import main.DTO.Shopping.ShopDTO;
 
 import javax.persistence.*;
 import java.util.Date;
