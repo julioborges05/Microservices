@@ -1,5 +1,7 @@
 package main.Entity;
 
+import main.DTO.Product.CategoryDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
